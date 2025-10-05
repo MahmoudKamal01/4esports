@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #dc1f2e;
+  --color-surface: #0b0b0c;
+  --color-surface-2: #121216;
+  --color-text: #ffffff;
+  --font-display: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-[--color-surface] text-[--color-text] antialiased font-sans;
+}
+
+.container-responsive {
+  @apply mx-auto px-4 sm:px-6 lg:px-8;
+  max-width: 100rem; /* widen container to ~1600px */
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold transition-colors;
+}
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold transition-colors bg-red-600 text-white hover:bg-red-600 shadow-lg shadow-red-900/30;
+}
+.btn-ghost {
+  @apply inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold transition-colors bg-white/5 hover:bg-white/10 border border-white/10 text-white;
+}
+
+.section {
+  @apply py-16 sm:py-20;
+}
+
+.section-title {
+  @apply text-3xl sm:text-4xl font-bold tracking-tight font-[--font-display] font-sans text-white;
+}
+
+.gradient-red {
+  background: radial-gradient(
+      1200px 600px at 80% -10%,
+      rgba(220, 31, 46, 0.25),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #1a0b0c 0%, #0b0b0c 100%);
+}
+
+.card {
+  @apply rounded-xl bg-[--color-surface-2] border border-white/10 overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-red-900/20;
+}
+
+.divider-accent {
+  @apply h-1 w-28 bg-[--color-brand] rounded-full;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero background: black top -> red -> red -> black */
+.hero-gradient {
+  background: linear-gradient(
+    180deg,
+    #000000 8%,
+    #ed1c24 40%,
+    #ed1c24 60%,
+    #000000 100%
+  );
+}
+
+/* Gradient text utility for red to black */
+.text-redblack {
+  background: linear-gradient(180deg, #ed1c24 0%, #000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Modern word fade animation */
+.word-fade-container {
+  display: inline-block;
+  position: relative;
+  min-width: 200px;
+  height: 1em; /* match text line height */
+  line-height: 1em;
+  vertical-align: -0.1em; /* nudge down to align with baseline */
+}
+
+.word-fade-container span {
+  position: absolute;
+  left: 0;
+  top: 0; /* align to container top */
+  opacity: 0;
+  animation: fadeInOut 9s ease-in-out infinite;
+}
+
+.word-fade-container span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.word-fade-container span:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.word-fade-container span:nth-child(3) {
+  animation-delay: 6s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  35% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.show {
+  opacity: 1;
+  transform: none;
+}
+
+/* Progress bar above services */
+.progress-track {
+  @apply w-full h-8 rounded-full bg-red-600;
+}
+.progress-fill {
+  @apply h-8 rounded-full bg-white;
+}
