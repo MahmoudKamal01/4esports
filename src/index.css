@@ -135,6 +135,13 @@ html {
   }
 }
 
+/* Improve hero text wrapping on small screens */
+@media (max-width: 640px) {
+  .word-fade-container {
+    min-width: 120px; /* allow tighter wrap to avoid truncation */
+  }
+}
+
 /* Scroll reveal */
 .reveal {
   opacity: 0;

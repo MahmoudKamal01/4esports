@@ -184,7 +184,7 @@ function App() {
   const [cIndex, setCIndex] = useState(0);
 
   return (
-    <div className="min-h-screen gradient-red">
+    <div className="min-h-screen gradient-red overflow-x-hidden">
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur bg-black/60 border-b border-white">
         <div className="container-responsive h-20 flex items-center justify-between">
           <a
@@ -245,12 +245,12 @@ function App() {
       <main id="home" className="pt-20">
         <section className="hero-gradient">
           <div className="container-responsive grid lg:grid-cols-2 gap-10 items-start pt-0 pb-12">
-            <div className="relative z-10 p-6  mt-24 text-white font-sans">
-              <h1 className="text-7xl mb-3 !font-sans">
+            <div className="relative z-10 px-3 py-4 sm:p-6  mt-16 sm:mt-24 text-white font-sans">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-3 leading-tight !font-sans">
                 Tournament Community 2025
               </h1>
               <div className="h-1 w-24 bg-white/80 mb-6"></div>
-              <p className="text-white/70 mb-6 max-w-prose font-light font-sans">
+              <p className="text-white/80 text-sm sm:text-base mb-6 max-w-prose font-light font-sans">
                 We are excited to announce that Tournament Community 2025 will
                 take place this December 2025. Get ready for a month full of
                 thrilling matches, friendly competition, and unforgettable
@@ -259,7 +259,7 @@ function App() {
               <div className="text-white/90 uppercase tracking-wider text-sm mb-3">
                 COUNTDOWN CALENDAR
               </div>
-              <div className="flex items-center gap-6 mb-8">
+              <div className="flex items-center gap-4 sm:gap-6 mb-8">
                 {[
                   {
                     label: "Months",
@@ -271,13 +271,13 @@ function App() {
                   <>
                     <div key={t.label} className="flex flex-col items-center">
                       <div
-                        className="px-6 py-6 border border-white/10 text-black"
+                        className="px-4 py-4 sm:px-6 sm:py-6 border border-white/10 text-black"
                         style={{
                           background:
                             "linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 35%), #C0C0C0",
                         }}
                       >
-                        <div className="text-4xl font-extrabold text-black">
+                        <div className="text-3xl sm:text-4xl font-extrabold text-black">
                           {t.value}
                         </div>
                       </div>
@@ -286,7 +286,7 @@ function App() {
                     {idx < 2 && (
                       <FaStar
                         key={`star-${idx}`}
-                        className="text-cyan-400 text-xl"
+                        className="text-cyan-400 text-lg sm:text-xl"
                       />
                     )}
                   </>
@@ -312,14 +312,14 @@ function App() {
                 />
               </div>
             </div>
-            <div className="relative justify-self-end self-start mt-0 lg:translate-x-16 xl:translate-x-36">
+            <div className="relative justify-self-end self-start mt-0 lg:-translate-x-8 xl:-translate-x-16 w-full mx-auto lg:mx-0 max-w-[520px] sm:max-w-[700px] lg:max-w-[900px] xl:max-w-[1100px]">
               <img
-                className="w-[1100px] h-[808px] object-cover max-w-none"
+                className="w-full h-auto object-cover"
                 src={heroImg}
                 alt="Action gaming"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                <div className="text-3xl sm:text-5xl font-extrabold">
+              <div className="sm:absolute sm:inset-x-0 sm:bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-3 sm:p-6">
+                <div className="text-xl sm:text-4xl lg:text-5xl font-extrabold break-words text-left">
                   <span className="text-white">Ready For The Suspension </span>
                   <span className="word-fade-container align-baseline">
                     <span className="text-redblack">Esports</span>
@@ -331,7 +331,7 @@ function App() {
                   <div className="h-full w-1/2 bg-[--color-brand]"></div>
                 </div>
               </div>
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 flex flex-col gap-2 text-white">
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-2 text-white">
                 <a
                   href="#"
                   className="h-9 w-9 rounded-full bg-black/70 border border-white/10 grid place-items-center transition-all duration-300 hover:-translate-y-1 hover:text-cyan-400"
